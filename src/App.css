@@ -1,38 +1,139 @@
-.App {
+.app {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+
+.all-events, .selected-events {
+  width: 48%;
+}
+
+.event-list, .selected-event-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.event-card, .selected-event-card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  flex: 1 1 calc(50% - 10px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 20px;
+}
+
+.selected-event-card {
+  background: #eef;
+}
+
+.category-badge {
+  font-size: 100px;
   text-align: center;
+  color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.event-card.disabled {
+  background-color: #cccccc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.event-card.enabled {
+  background-color: #cae0f6; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Additional styles */
+.event-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.event-card.disabled button {
+  background-color: #e4e2e2;;
+  cursor: not-allowed;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .all-events, .selected-events {
+    width: 100%;
   }
+}
+
+.event-card {
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.selected-event-card {
+  background-color: #d0e0ff;
+  text-align: center;
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid #4CAF50;
+}
+
+.event-card.disabled,
+.event-card.disabled h3,
+.event-card.disabled p {
+  color: #aaaaaa;
+  text-align: center;
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.event-card.disabled button {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.vertical-line {
+  width: 1px; 
+  background-color: #000;
+  position: relative;
+  height: 200px;
+  top: 2px;
+  left: 0px;
+}
+
+.content {
+  margin-right: 100px;
 }
